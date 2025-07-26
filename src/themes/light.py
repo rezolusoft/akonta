@@ -1,0 +1,20 @@
+import flet as ft
+
+light_theme = ft.Theme(
+    color_scheme=ft.ColorScheme(
+        primary="#033c59",
+        secondary="#f7a31c",
+        primary_container="#055072",
+        secondary_container="#fbc66c",
+        background="#d4d4d4",
+        surface="#ffffff",
+        error="#b00020",
+        on_primary="#ffffff",
+        on_secondary="#000000",
+        on_background="#000000",
+        on_surface="#000000",
+        on_error="#ffffff"
+    ),
+
+    use_material3=True,
+)
