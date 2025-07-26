@@ -1,28 +1,48 @@
 import flet as ft
+from components import side_menu
+from themes import light_theme, dark_theme
+from components import top_bar
 
 
 def main(page: ft.Page):
-    counter = ft.Text("0", size=50, data=0)
 
-    appBar = ft.AppBar(title=ft.Text("Akonta"))
 
-    def increment_click(e):
-        counter.data += 4
-        counter.value = str(counter.data)
-        counter.update()
+    page.title = "Akonta"
 
-    page.floating_action_button = ft.FloatingActionButton(
-        icon=ft.Icons.ADD, on_click=increment_click
-    )
-    
+    page.theme_mode = ft.ThemeMode.LIGHT
+
+    page.theme = light_theme
+    page.dark_theme = dark_theme
+
+    page.bgcolor = page.theme.color_scheme.background
+
     
     page.add(
         ft.SafeArea(
-            ft.Container(
-                counter,
-                alignment=ft.alignment.center,
+
+            content = ft.Column(
+                expand=True,
+                controls=[
+                    ft.Row(
+                        controls=[
+                                top_bar
+                                ]
+                        ),
+                    ft.Row(
+                        expand=True,
+                        controls=[
+                            side_menu,   
+                            ft.Container(
+                                content=ft.Text("Contenu Principal"), 
+                                bgcolor=ft.Colors.WHITE, 
+                                expand=True),
+                                ]
+                        )
+                ],
             ),
-            expand=True,
+            expand=True
+
+
         )
     )
 
