@@ -1,21 +1,26 @@
 import flet as ft
+from .partial.top_bar_title import top_bar_title
 
 
 logo = ft.Container(ft.Image(src="Logo.png"))
-logo.padding = ft.padding.all(10)
-logo.margin = ft.margin.only(left=10, right=5)
+logo.padding = ft.padding.all(15)
+logo.margin = ft.margin.only(left=10, right=10)
 
 
-divider = ft.Container(ft.VerticalDivider(color=ft.Colors.ON_SURFACE))
-divider.padding = ft.padding.symmetric(vertical=5)
 
 top_bar = ft.Container(
                         bgcolor=ft.Colors.SURFACE, 
                         expand=True,
                         height=70,
                         content=ft.Row(controls=[
-                            logo,
-                            divider
+                            ft.Row(
+                                controls=[
+                                    logo,
+                                    top_bar_title('Dashboard', 'Bienvenue, Rezolusoft')
+                                ]
+                            ),
+                            
+                            
                         ]), 
                         
                         )
