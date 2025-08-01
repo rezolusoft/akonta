@@ -16,10 +16,8 @@ def main(page: ft.Page):
 
     page.bgcolor = page.theme.color_scheme.background
 
-
     page.add(
         ft.SafeArea(
-
             content = ft.Column(
                 expand=True,
                 controls=[
@@ -30,5 +28,4 @@ def main(page: ft.Page):
             expand=True
         )
     )
-
 ft.app(main)
