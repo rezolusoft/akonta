@@ -10,9 +10,9 @@ light_theme = ft.Theme(
         surface="#ffffff",
         error="#b00020",
         on_primary="#ffffff",
-        on_secondary="#000000",
-        on_background="#000000",
-        on_surface="#000000",
+        on_secondary="#033c59",
+        on_background="#033c59",
+        on_surface="#033c59",
         on_error="#ffffff"
     ),
 
