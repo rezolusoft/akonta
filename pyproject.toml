@@ -5,12 +5,12 @@ description = "Inventory management software for small businesses and retail sto
 readme = "README.md"
 requires-python = ">=3.9"
 authors = [
-    { name = "Rezolusoft HQ", email = "info@rezolusoft.com" }
+    { name = "Rezolusoft HQ", email = "info@rezolusoft.com" },
     { name = "Abiodoun Paraiso", email = "contact@abiodoun.dev" }
 
 ]
 dependencies = [
-  "flet==0.28.3"
+  "flet==0.28.3",
 ]
 
 [tool.flet]
