@@ -1,7 +1,5 @@
 import flet as ft
 
-dashboard = ft.Container(content=ft.Text(
-    
-    "Contenu Principal"), bgcolor=ft.Colors.SURFACE,
-   
-    )
+def dashboard()->ft.Control :
+    dashboard = ft.Container(content=ft.Text("dashboard -> Contenu Principal"), bgcolor=ft.Colors.SURFACE)
+    return dashboard
