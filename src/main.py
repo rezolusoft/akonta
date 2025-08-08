@@ -1,45 +1,54 @@
 import flet as ft
-from components import side_menu
 from themes import light_theme, dark_theme
-from components import top_bar
-from pages import dashboard
+from components import pager, routes
+from importlib import import_module
 
 
 def main(page: ft.Page):
 
 
+    # Maximiser la fenetre
     page.window.maximized = True
+    # Definir Titre
     page.title = "Akonta"
+
+    # Charger le theme
     page.theme_mode = ft.ThemeMode.LIGHT
     page.theme = light_theme
     page.dark_theme = dark_theme
     page.bgcolor = page.theme.color_scheme.background
 
-    page.add(
-        ft.SafeArea(
-            content = ft.Column(
-                expand=True,
-                controls=[
-                    ft.Row(expand=True,
-                        controls=[
-                        
-                        side_menu,
-                        ft.Column(
-                            controls=[
-                                top_bar,
-                                 dashboard
-                            ],
-                            expand=True
-                            
-                            ),
-                        
+    # initialiser le contenu a vide
+    content_container = ft.Container(expand=True)
 
-                       ])
-                ],
-            ),
-            expand=True
-        )
-    )
 
+    def router(e: ft.RouteChangeEvent):
+        # charger dynamiquement le contenu
+        # adequat en fonction de la route
+        route = page.route
+
+        if route in routes:
+            route = route.lstrip("/")
+            content = import_module(f"pages.{route}")
+            content_container.content = getattr(content, route)()
+        else:
+            content_container.content = ft.Text("Page introuvable")
+        page.update()
+
+
+                
+    # initialisation de l'echaffaudage
+    layout = pager(page=page, content=content_container)
+
+    # ajout de l'echaffaudage a la page
+    page.add(layout)
+
+    page.on_route_change = router
+
+    # Controle de la page par défaut
+    if page.route == "/":
+        page.go('/dashboard')
+    else:
+        page.go(page.route)
 
 ft.app(main)

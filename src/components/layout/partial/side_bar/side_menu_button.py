@@ -1,6 +1,6 @@
 import flet as ft
 
-def side_menu_button(title, icon, destination=None)->ft.Control:
+def side_menu_button(title, icon, page=None, destination=None)->ft.Control:
 
     button = ft.Container(
                 ft.Row(
@@ -10,7 +10,9 @@ def side_menu_button(title, icon, destination=None)->ft.Control:
                         ft.Text(title)
                     ],
                 ),
-                padding=ft.padding.all(10)
+                padding=ft.padding.all(10),
+                on_click= lambda e : page.go(destination)
+                
 
 
             )

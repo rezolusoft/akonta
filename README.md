@@ -2,7 +2,7 @@
 **Simple, powerful inventory management software for small businesses and retail stores.**  
 
 
-##Organisation du Repo
+## Organisation du Repo
 
 - ```/src/components``` : Repertoire principal qui comporte l'ensemble des 
 controles presonalisés
