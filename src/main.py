@@ -21,6 +21,8 @@ def main(page: ft.Page):
     # initialiser le contenu a vide
     content_container = ft.Container(expand=True)
 
+    # initialisation de l'echaffaudage
+    layout = pager(page=page, content=content_container)
 
     def router(e: ft.RouteChangeEvent):
         # charger dynamiquement le contenu
@@ -33,12 +35,13 @@ def main(page: ft.Page):
             content_container.content = getattr(content, route)()
         else:
             content_container.content = ft.Text("Page introuvable")
+        # reconstruire l'echaffaudage au changement de route 
+        layout.content = pager(page=page, content=content_container)
         page.update()
 
 
                 
-    # initialisation de l'echaffaudage
-    layout = pager(page=page, content=content_container)
+
 
     # ajout de l'echaffaudage a la page
     page.add(layout)
