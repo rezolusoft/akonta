@@ -1,5 +1,5 @@
 import flet as ft
-from components.layout.partial import top_bar_title, search_bar, settings_menu
+from components.partial import top_bar_title, search_bar, settings_menu
 
 
 top_bar = ft.Container(

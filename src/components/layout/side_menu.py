@@ -1,5 +1,5 @@
 import flet as ft
-from components.layout.partial import side_menu_button
+from components.partial import side_menu_button
 
 
 def menu_title(_title: str) -> ft.Control:
