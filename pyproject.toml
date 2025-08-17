@@ -25,6 +25,7 @@ path = "src"
 [tool.uv]
 dev-dependencies = [
     "flet[all]==0.28.3",
+    "peewee==3.18.2",
 ]
 
 [tool.poetry]

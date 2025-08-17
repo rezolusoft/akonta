@@ -1,1 +1,2 @@
 flet[all]
+peewee==3.18.2
