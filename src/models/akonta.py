@@ -1,10 +1,9 @@
-from pathlib import Path
 from datetime import datetime
+from models import db
 from peewee import *
 
 # initialiser la base de donnée
-db_path = Path(__file__).parent.parent.joinpath('db/akonta.db')
-db = SqliteDatabase(db_path)
+
 
 
 class AkontaObject(Model):
