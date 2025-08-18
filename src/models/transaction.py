@@ -1,9 +1,11 @@
 from models.akonta import AkontaObject
+from extras.tools import id_generator
 from extras.enums import TransactionTypeEnums
 from peewee import *
 
 class AkontaTransaction(AkontaObject):
     title = CharField()
+    transaction_id = UUIDField(default=id_generator)
     amount = DecimalField()
     type = CharField(choices=TransactionTypeEnums.items())
     description = TextField(null=True)
