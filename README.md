@@ -1,5 +1,5 @@
-# Akonta 📦  
-**Simple, powerful inventory management software for small businesses and retail stores.**  
+# Akonta Inventory 📦  
+**Le système de gestion de stock pensé et conçu pour optimiser vos activités.**  
 
 
 ## Organisation du Repo
