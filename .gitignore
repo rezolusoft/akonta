@@ -164,4 +164,4 @@ storage/
 
 .DS_Store
 
-.db
+*.db
