@@ -11,7 +11,7 @@ class AkontaInvoice(AkontaObject):
     """
     code = CharField(default=invoice_code_generator)
     sale = ForeignKeyField(AkontaSale)
-    customer = ForeignKeyField(AkontaCustomer)
+    customer = ForeignKeyField(AkontaCustomer, backref="invoices")
     comment = TextField(null=True)
 
     
