@@ -13,3 +13,7 @@ class AkontaShop(AkontaObject):
     rccm = CharField(max_length=100, null=True)
     manager = CharField(max_length=150)
 
+    def __str__(self):
+        return self.name
+
+
