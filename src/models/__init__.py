@@ -19,12 +19,27 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 def db_initializer(page):
 
     store = AkontaStore(page)
+
     db_init = store.get("db_init")
+
+    tables=[AkontaCategory, 
+            AkontaCustomer, 
+            AkontaProduct, 
+            AkontaInvoice, 
+            AkontaSale, 
+            AkontaSaleItem, 
+            AkontaShop, 
+            AkontaTransaction]
+
     if not db_init:
+
         logging.info("##### DB INITIALIZATION #####")
-        db.connect()
-        db.create_tables([AkontaCategory, AkontaCustomer, AkontaProduct, AkontaInvoice, AkontaSale, AkontaSaleItem, AkontaShop, AkontaTransaction])
+
+        db.connect() # connection a la db
+        db.create_tables(tables) # creation des tables
+
         store.set("db_init", True)
+
         logging.info("##### DB INITIALIZED SUCESSFULLY #####")
     else:
         logging.info("##### DB ALREADY INITIALIZED #####")
