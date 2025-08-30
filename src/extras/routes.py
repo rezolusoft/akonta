@@ -1,6 +1,5 @@
 routes = [
     '/dashboard',
     '/stock',
-    '/product',
-
+    '/product'
 ]
