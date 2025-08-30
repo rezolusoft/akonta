@@ -2,7 +2,8 @@ import flet as ft
 from components.partial import top_bar_title, search_bar, settings_menu
 
 
-top_bar = ft.Container(
+def top_bar()->ft.Control:
+    top_bar = ft.Container(
     bgcolor=ft.Colors.SURFACE,
 
     content=ft.Row(controls=[
@@ -19,4 +20,8 @@ top_bar = ft.Container(
 
 )
 
-top_bar.border_radius = ft.border_radius.all(7)
+    top_bar.border_radius = ft.border_radius.all(10)
+    
+    return top_bar
+
+
