@@ -26,3 +26,8 @@ class CurrencyTypeEnums(BaseEnum):
     USD = "Dollars US"
     EUR = "Euro"
 
+
+class AccountTypeEnums(BaseEnum):
+    ADMIN = "admin"
+    SELLER = "seller"
+
