@@ -7,7 +7,7 @@ def avatar()->ft.Control:
                 ft.Stack(
                     [
                         ft.Container(
-                            ft.Image("cube.png"),
+                            ft.Image("img/cube.png"),
 
                             padding=ft.padding.all(0),
                             border_radius=ft.border_radius.all(30),
