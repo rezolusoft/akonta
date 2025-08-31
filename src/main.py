@@ -1,14 +1,15 @@
 import flet as ft
 from themes import light_theme, dark_theme
-from components import pager, routes
+from components import pager
+from extras.routes import routes
 from importlib import import_module
 from models import db_initializer
-
 
 
 def main(page: ft.Page):
 
     db_initializer(page)
+
     # Maximiser la fenetre
     page.window.maximized = True
     # Definir Titre
@@ -18,8 +19,9 @@ def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.LIGHT
     page.theme = light_theme
     page.dark_theme = dark_theme
-    page.bgcolor = page.theme.color_scheme.background
-
+    page.bgcolor = None
+    page.padding = ft.padding.all(0)
+    
     # initialiser le contenu a vide
     content_container = ft.Container(expand=True)
 
@@ -43,7 +45,6 @@ def main(page: ft.Page):
 
 
 
-
     # ajout de l'echaffaudage a la page
     page.add(layout)
 
@@ -54,5 +55,6 @@ def main(page: ft.Page):
         page.go('/dashboard')
     else:
         page.go(page.route)
+
 
 ft.app(main)
