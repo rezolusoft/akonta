@@ -9,7 +9,7 @@ def menu_title(_title: str) -> ft.Control:
     return title
 
 
-logo = ft.Container(ft.Image(src="Logo.png"), height=50)
+logo = ft.Container(ft.Image(src="img/logo.png"), height=50)
 
 
 
@@ -20,7 +20,7 @@ spacer.margin = ft.margin.symmetric(vertical=10)
 def side_menu(page)->ft.Control:
     
     side_menu = ft.Container(
-    bgcolor=ft.Colors.SURFACE,
+    # bgcolor=ft.Colors.SURFACE,
 
     content=ft.Column(
         expand=True,
@@ -37,11 +37,8 @@ def side_menu(page)->ft.Control:
             side_menu_button(title="Donner un avis", icon="MODE_COMMENT", destination="/feedback", page=page),
             side_menu_button(title="Support Client", icon="SUPPORT_AGENT_ROUNDED", destination="/support", page=page),
 
-        ],
+        ]),
 
-
-
-    )
 )
 
 

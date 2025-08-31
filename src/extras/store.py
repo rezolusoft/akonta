@@ -2,7 +2,7 @@ class AkontaStore():
     """
     Store
     Classe permettant de gerer le stockage de données utilisateur
-    produite et exploitée par l\'application
+    produite et exploitée par l'application
 
     liste des donnees: \n
     db_init -> permet de stocker l'etat de la bd
